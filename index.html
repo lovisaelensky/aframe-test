@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Escape from Hyper Island</title>
+
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script> -->
+
+</head>
+
+<body>
+    <a-scene inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+
+        <a-assets>
+            <audio id="bg-music" src="/assets/i-have-sinned-creepy-mysterious-free-music-2466.mp3"></audio>
+        </a-assets>
+
+        <!-- <a-camera>
+            <a-text id="score-element" value="Score" position="-0.35 0.5 -0.8"></a-text>
+            <a-cursor></a-cursor>
+        </a-camera>
+        <a-entity environment="preset:dream"></a-entity>
+    </a-scene>
+    <a-entity id="heart-model" gltf-model="Heart.gltf" position="0 1.5 -5" scale="0.01 0.01 0.01"
+        animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 2000"
+        animation__collect="property: position; to: 0 0 0; dur: 300; startEvents: collected"
+        animation__minimize="property: scale; to: 0 0 0; dur: 300; startEvents: collected">
+    </a-entity> -->
+
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+
+        <a-entity text="font: dejavu; align: center; 
+            letterSpacing: 0.2; color: #000000; value: shit on the wall; width: 1.71;" position="-0.522 1.440 -1.991">
+        </a-entity>
+
+
+        <rw-room position="-2 0 -2" material="color:#866">
+            <rw-wall position="4 0 0"></rw-wall>
+            <rw-wall position="4 0 4"></rw-wall>
+            <rw-wall position="0 0 4"></rw-wall>
+            <rw-wall position="0 0 0">
+                <rw-doorhole id="holeA"></rw-doorhole>
+                <rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
+            </rw-wall>
+        </rw-room>
+        <rw-room position="0 0 -3">
+            <rw-wall position=" 1 0 -1" material="color:#787"></rw-wall>
+            <rw-wall position=" 1 0  1" material="color:#877">
+                <rw-doorhole id="holeB"></rw-doorhole>
+            </rw-wall>
+            <rw-wall position="-1 0  1" material="color:#878"></rw-wall>
+            <rw-wall position="-1 0 -1" material="color:#778"></rw-wall>
+        </rw-room>
+
+        <a-box id="blue-box" color="blue" position="0 0.5 -1" sound="src: #bg-music; on: click;"></a-box>
+
+    </a-scene>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
